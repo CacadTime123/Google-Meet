@@ -12,14 +12,47 @@
 <body>
 <!-- Start of first page -->
 <div data-role="page" id="satu">
-
 	<div data-role="header">
-		<h1>Satu</h1>
+		<h1>Koperasi Bersama</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<p>I'm first in the source order so I'm shown as the page.</p>
-		<p>View internal page called <a href="#dua">Dua</a></p>
+            <div data-role="tabs" id="tabs"> <!-- tabs -->
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#one" class="ui-btn-active">One</a></li>
+                        <li><a href="#two">Two</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            <div id="one" class="ui-body-d ui-content">
+                <form>
+                    <label for="text-1">Input bayar dan berapa kali nyicil</label>
+                    <input type="text" name="text-1" id="jumlah-uang" value="">
+                    <label for="text-3">Input berapa kali nyicil</label>
+                    <input type="text" name="text-3" id="kali-nyicil" value="">
+                    <input type="button" value="Submit" id="submit">
+                </form>
+                <div>
+                    <form>
+                        <label id="totale"></label>
+                    </form>
+                </div>
+            </div>
+            <div id="two">
+                <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+                    <thead>
+                        <tr>
+                            <th>Jumlah Pinjam</th>
+                            <th>Jumlah Cicilan</th>
+                            <th>Total pengembalian</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- /tab -->
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -28,3 +61,39 @@
 </div><!-- /page -->
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        var count = 0;
+        var duitsekarang;
+        var cicilan;
+        var total;
+        var table = '<tr>';
+       $("#submit").click(function(){
+           alert("sudah masuk");
+           duitsekarang = $("#jumlah-uang").val();
+           cicilan = $("#kali-nyicil").val();
+           if (cicilan <= 6) {
+               total = parseInt(duitsekarang) + (parseInt(duitsekarang * 2 / 100 * cicilan));
+           }
+           else if (cicilan <= 12) {
+                total = parseInt(duitsekarang) + (parseInt(duitsekarang * 15 / 1000 * cicilan));
+           } else {
+                total = parseInt(duitsekarang) + (parseInt(duitsekarang * 1 / 100 * cicilan));
+           }
+           count++;
+           table += '<td>';
+           table += duitsekarang;
+           table += '</td>';
+           table += '<td>';
+           table += cicilan;
+           table += '</td>';
+           table += '<td>';
+           table += total;
+           table += '</td>';
+           table += '</tr>';
+           $("#totale").text(total);
+           $("#body").append(table);
+       });
+    });
+</script>
