@@ -12,14 +12,40 @@
 <body>
 <!-- Start of first page -->
 <div data-role="page" id="satu">
-
 	<div data-role="header">
-		<h1>Satu</h1>
+		<h1>Koperasi Bersama</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<p>I'm first in the source order so I'm shown as the page.</p>
-		<p>View internal page called <a href="#dua">Dua</a></p>
+        <div data-role="navbar">
+                <ul>
+                    <li><a href="#one" class="ui-btn-active">One</a></li>
+                    <li><a href="#two">Two</a></li>
+                </ul>
+        </div><!-- /navbar -->
+        <div id="one">
+            <form>
+                <label for="text-1">Input bayar dan berapa kali nyicil</label>
+                <input type="text" name="text-1" id="jumlah-uang" value="">
+                <label for="text-3">Input berapa kali nyicil</label>
+                <input type="text" name="text-3" id="kali-nyicil" value="">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="two" class="ui-body-d ui-content">
+            <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Jumlah Pinjam</th>
+                        <th>Total pengembalian</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
 	</div><!-- /content -->
 
 	<div data-role="footer">
