@@ -30,7 +30,7 @@
                     <input type="text" name="text-1" id="jumlah-uang" value="">
                     <label for="text-3">Input berapa kali nyicil</label>
                     <input type="text" name="text-3" id="kali-nyicil" value="">
-                    <input type="submit" value="Submit">
+                    <input type="button" value="Submit" id="submit">
                 </form>
             </div>
             <div id="two">
@@ -56,3 +56,27 @@
 </div><!-- /page -->
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        var duit_awal = [];
+        var duit_yang_harus_dibayar = [];
+        var duitsekarang;
+        var cicilan;
+        var total;
+       $("#submit").click(function(){
+           duitsekarang = $("#jumlah-uang").val();
+           cicilan = $("#kali-nyicil").val();
+           if (cicilan <= 6) {
+               total = duitsekarang + (duitsekarang * 2 / 100 * cicilan);
+           }
+           else if (cicilan <= 12) {
+                total = duitsekarang + (duitsekarang * 15 / 1000 * cicilan);
+           } else {
+                total = duitsekarang + (duitsekarang * 1 / 100 * cicilan);
+           }
+           duit_awal.push(duitsekarang);
+           duit_yang_harus_dibayar.push(total);
+       });
+    });
+</script>
