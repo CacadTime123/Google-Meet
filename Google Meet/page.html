@@ -17,35 +17,37 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-        <div data-role="navbar">
-                <ul>
-                    <li><a href="#one" class="ui-btn-active">One</a></li>
-                    <li><a href="#two">Two</a></li>
-                </ul>
-        </div><!-- /navbar -->
-        <div id="one">
-            <form>
-                <label for="text-1">Input bayar dan berapa kali nyicil</label>
-                <input type="text" name="text-1" id="jumlah-uang" value="">
-                <label for="text-3">Input berapa kali nyicil</label>
-                <input type="text" name="text-3" id="kali-nyicil" value="">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div id="two" class="ui-body-d ui-content">
-            <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Jumlah Pinjam</th>
-                        <th>Total pengembalian</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div data-role="tabs" id="tabs"> <!-- tabs -->
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#one" class="ui-btn-active">One</a></li>
+                        <li><a href="#two">Two</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            <div id="one" class="ui-body-d ui-content">
+                <form>
+                    <label for="text-1">Input bayar dan berapa kali nyicil</label>
+                    <input type="text" name="text-1" id="jumlah-uang" value="">
+                    <label for="text-3">Input berapa kali nyicil</label>
+                    <input type="text" name="text-3" id="kali-nyicil" value="">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div id="two">
+                <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Jumlah Pinjam</th>
+                            <th>Total pengembalian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- /tab -->
 	</div><!-- /content -->
 
 	<div data-role="footer">
